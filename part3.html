@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Dating Website</title>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+<meta charset=utf-8 />
+
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<style type="text/css">
+	fieldset {
+	background: lightyellow;
+	border: 10px solid yellow;
+	margin-bottom: 10px;
+	width: 720px;
+	
+}
+
+.navbar{
+	width: 100%;
+	background-color: #292929;
+	color: white;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+label:hover{
+	font-size: 40px;
+}
+
+label {
+	width: 180px;
+	display: inline-block;
+	text-align: right;
+	font-size: inherit;
+
+}
+
+input:hover{
+	font-size: 40px;
+}
+
+.radio {
+	width: auto;
+}
+
+.range {
+	text-align: center;
+}
+
+textarea {
+	width: 360px;
+	height: 50px;
+}
+
+.span1 {
+	background: red;
+	color: white;
+}
+
+.span2 {
+	background: blue;
+	color: white;
+}
+
+</style>
+
+</head>
+<body>
+<header class="navbar">Mike</header>
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+<h1>Please Enter Your Details For Our Dating Website</h1>
+
+<fieldset>
+	<legend>Your Image:</legend>
+	<label>Your Face:</label><input type="file" name="yourface" id="yourface" accept="image/*" placeholder="Select a photo" onchange="readURL(this);"> <br>
+	<label>Image Preview:</label><img src="#" id="yourface2">
+</fieldset>
+
+<fieldset>
+
+<legend>Your General Details</legend>
+<label>Name:</label><input type="text" name="nameText" id="nameText" accept="text" placeholder="Your full name"><br>
+
+<label>Gender:</label>
+Male<input type="radio" class="radio" name="genderRadio" id="genderRadio" value="Male"> 
+Female<input type="radio" class="radio" name="genderRadio" id="genderRadio" value="Female">
+	<br>
+
+<label>Age:</label><input type="number" name="ageNumber" id="ageNumber"><br>
+<label>Date of birth:</label><input type="date" name="date" id="date"><br>
+<label>Favorite color:</label><input type="color" name="color" id="color"><br>
+<label>Which country:</label><select name="country">
+	<option value="United States of America">United States of America</option>
+	<option value="Whimseyshire">Whimseyshire</option>
+	<option value="Japan">Japan</option>
+	<option value="Canada">Canada</option>
+	<option value="Brazil">Brazil</option>
+	<option value="Ukraine">Ukraine</option> <br>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>Your Indicators</legend>
+<label> Height:</label>
+<div class="range">
+<span class ="span1">Short</span><input type="range" min="0" max="100" id="slide1" list="powers"><span class ="span2">Tall</span></div><br>
+
+<label>Salary:</label>
+<div class="range">
+<span class="span1">Poor</span><input type="range" min="0" max="100" id="slide2"><span class="span2">Rich</span></div><br>
+</fieldset>
+
+<fieldset>
+<legend>Your Contact Information</legend>
+<label>email:</label><input type="email" id="email" name="email" placeholder="Your email address here"><br>
+<label>mobile:</label><input type="text" id="phoneText" name="phoneText" placeholder="xxx-xxx-xxxx"><br>
+<label>Address:</label><textarea rows="4" cols="50" placeholder="xxxx McKenna st springfield, Wherever 00000"></textarea><br>
+<label> Method to contact you:</label>
+Email<input type="radio" class="radio" name="contactRadio" id="contactRadio" value="email">
+Whatsapp<input type="radio" class="radio" name="contactRadio" id="contactRadio" value="Whatsapp">
+In-app Chat<input type="radio" class="radio" name="contactRadio" id="contactRadio" value="In-app Chat"> <br>
+</fieldset>
+
+<input type="submit" value="submit">
+</form>
+</body>
+</html>
