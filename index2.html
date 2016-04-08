@@ -1,0 +1,43 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title></title>	
+</head>
+<body onload="changeBackground()">
+<h1>Color Guessing Game</h1>
+<script>
+	var output = ["red","black","blue","green","orange"]
+	var index = Math.floor(Math.random() * output.length - 1);
+	console.log(index);
+	console.log(output + " look here");
+
+//sets background color of web page if you guess correctly
+		function changeBackground(setColor){
+			var setColor = null;
+			var input = prompt("I am thinking of one of these colors: \n" +output+ "\nWhich one am I thinking of???? Hmmmm??");
+			while(input != output[index]){
+				//throw the user a bone
+				checkGuess(output[index], input);
+				var input = prompt("Wrong, try again! I am thinking of one of these colors: \n" +output+ "\nWhich one am I thinking of???? Hmmmm??");
+			console.log(input);						
+		}
+		if (input == output[index]){
+				setColor = output[index];
+				alert(setColor + " is the correct choice!");
+				document.body.style.background = setColor;
+			}		
+		return setColor;
+	}
+
+		function checkGuess(string1, string2){
+			if (string1 > string2){
+					alert(" HINT: The right answer is alphabetically higher than your choice, which was " + string2);
+			}
+			else if (string1 < string2){
+					alert(" HINT: The right answer is alphabetically lower than your choice, which was " + string2);
+			}
+		}
+	
+</script>
+</body>
+</html>
